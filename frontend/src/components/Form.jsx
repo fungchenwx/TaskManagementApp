@@ -1,10 +1,10 @@
 import { useState } from "react"
 import api from "../api"
 import { useNavigate } from "react-router-dom"
-import { ACCESS_TOKEN, REFRESH_TOKEN} from "../constants"
+import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants"
 import "../styles/Form.css"
 
-function Form({route, method}) {
+function Form({ route, method }) {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [loading, setLoading] = useState(false)
@@ -33,16 +33,16 @@ function Form({route, method}) {
         }
     }
 
-    return <form onSubmit = {handleSubmit} className="form-container">
+    return <form onSubmit={handleSubmit} className="form-container">
         <h1>{name}</h1>
-        <input 
+        <input
             className="form-input"
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             placeholder="Username"
         />
-        <input 
+        <input
             className="form-input"
             type="password"
             value={password}

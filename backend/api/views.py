@@ -5,6 +5,7 @@ from .serializers import UserSerializer, TaskSerializer
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from .models import Task
 
+
 class TaskListCreate(generics.ListCreateAPIView):
     serializer_class = TaskSerializer
     permission_classes = [IsAuthenticated]
@@ -12,12 +13,13 @@ class TaskListCreate(generics.ListCreateAPIView):
     def get_queryset(self):
         user = self.request.user
         return Task.objects.filter(author=user)
-    
+
     def perform_create(self, serializer):
         if serializer.is_valid():
             serializer.save(author=self.request.user)
         else:
             print(serializer.errors)
+
 
 class TaskDelete(generics.DestroyAPIView):
     serializer_class = TaskSerializer
@@ -26,6 +28,7 @@ class TaskDelete(generics.DestroyAPIView):
     def get_queryset(self):
         user = self.request.user
         return Task.objects.filter(author=user)
+
 
 class CreateUserView(generics.CreateAPIView):
     queryset = User.objects.all()
