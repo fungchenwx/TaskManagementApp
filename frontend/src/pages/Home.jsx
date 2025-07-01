@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react"
+import Task from "../components/Task"
 import api from "../api"
 
 function Home() {
-    const [title, setTitle] = useState();
-    const [tasks, setTasks] = useState();
-    const [content, setContent] = useState();
+    const [title, setTitle] = useState("");
+    const [tasks, setTasks] = useState([]);
+    const [content, setContent] = useState("");
 
 
     const getTasks = async () => {
@@ -51,43 +52,39 @@ function Home() {
     };
 
 
-    return <div>
+    return (
         <div>
             <h2>Tasks</h2>
-            <ul>
-                {tasks && tasks.map((task) => (
-                    <li key={task.id}>
-                        <strong>{task.title}</strong>: {task.content}
-                        <button onClick={() => deleteTask(task.id)}>Delete</button>
-                    </li>
-                ))}
-            </ul>
+            {tasks.map((task) => (
+                <Task key={task.id} task={task} onDelete={deleteTask}
+                />
+            ))}
+            <h2>Create a Task</h2>
+            <form onSubmit={createTask}>
+                <label htmlFor="title">Title:</label>
+                <br />
+                <input
+                    type="text"
+                    id="title"
+                    name="title"
+                    required onChange={(e) => setTitle(e.target.value)}
+                    value={title}
+                />
+                <br />
+                <label htmlFor="content">Content:</label>
+                <br />
+                <textarea
+                    id="content"
+                    name="content"
+                    required
+                    value={content}
+                    onChange={(e) => setContent(e.target.value)}
+                ></textarea>
+                <br />
+                <input type="submit" value="Submit"></input>
+            </form>
         </div>
-        <h2>Create a Task</h2>
-        <form onSubmit={createTask}>
-            <label htmlFor="title">Title:</label>
-            <br />
-            <input
-                type="text"
-                id="title"
-                name="title"
-                required onChange={(e) => setTitle(e.target.value)}
-                value={title}
-            />
-            <br />
-            <label htmlFor="content">Content:</label>
-            <br />
-            <textarea
-                id="content"
-                name="content"
-                required
-                value={content}
-                onChange={(e) => setContent(e.target.value)}
-            ></textarea>
-            <br />
-            <input type="submit" value="Submit"></input>
-        </form>
-    </div>
+    );
 }
 
 export default Home
