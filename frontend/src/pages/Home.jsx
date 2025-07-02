@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import Task from "../components/Task"
 import api from "../api"
+import "../styles/Home.css"
 
 function Home() {
     const [title, setTitle] = useState("");
