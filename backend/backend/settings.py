@@ -30,8 +30,6 @@ SECRET_KEY = "django-insecure-zbig23vtm9f&$s5y=hsf8&ldoaic=8299hq47ee+7tphk#17c=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["3.133.110.237", "localhost", "127.0.0.1"]
-
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
@@ -143,7 +141,15 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-CORS_ALLOW_ALL_ORIGINS = True
-CORS_ALLOW_CREDENTIALS = True
+ALLOWED_HOSTS = ["3.133.110.237",
+                 "localhost",
+                 "127.0.0.1",
+                 "taskmanagements.com",
+                 "www.taskmanagements.com"]
+
+CSRF_TRUSTED_ORIGINS = [
+  "https://taskmanagements.com",
+  "https://www.taskmanagements.com",
+]
 
 APPEND_SLASH = False
