@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework_simplejwt.views import TokenRefreshView
+from rest_framework.permissions import AllowAny
 from api.views import CreateUserView, ObtainTokenView
 
 urlpatterns = [
