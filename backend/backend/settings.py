@@ -138,6 +138,7 @@ CORS_ALLOWED_ORIGINS = [
     "https://master.dj49as9kq0ier.amplifyapp.com",
     "https://taskmanagements.com",
     "https://www.taskmanagements.com",
+    "https://api.taskmanagements.com",
 ]
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_HEADERS = list(default_headers) + [
