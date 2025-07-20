@@ -37,12 +37,7 @@ CSRF_TRUSTED_ORIGINS = [
     "https://taskmanagements.com",
     "https://www.taskmanagements.com",
     "https://master.dj49as9kq0ier.amplifyapp.com",
-]
-
-CORS_ALLOWED_ORIGINS = [
-    "https://master.dj49as9kq0ier.amplifyapp.com",
-    "https://taskmanagements.com",
-    "https://www.taskmanagements.com",
+    "https://api.taskmanagements.com",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
