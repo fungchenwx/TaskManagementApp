@@ -30,6 +30,7 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
     "taskmanagements.com",
     "www.taskmanagements.com",
+    "api.taskmanagements.com",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
