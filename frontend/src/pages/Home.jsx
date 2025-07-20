@@ -2,11 +2,22 @@ import { useState, useEffect } from "react"
 import Task from "../components/Task"
 import api from "../api"
 import "../styles/Home.css"
+import { useNavigate } from "react-router-dom"
+import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants"
+
 
 function Home() {
     const [title, setTitle] = useState("");
     const [tasks, setTasks] = useState([]);
     const [content, setContent] = useState("");
+
+    const navigate = useNavigate()
+
+    const handleLogout = () => {
+        localStorage.removeItem(ACCESS_TOKEN)
+        localStorage.removeItem(REFRESH_TOKEN)
+        navigate("/login")
+    }
 
 
     const getTasks = async () => {
@@ -55,6 +66,7 @@ function Home() {
 
     return (
         <div className="home-container">
+            <button onClick={handleLogout}>Logout</button>
             <h2>Tasks</h2>
             {tasks.map((task) => (
                 <Task key={task.id} task={task} onDelete={deleteTask}

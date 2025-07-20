@@ -39,6 +39,18 @@ CSRF_TRUSTED_ORIGINS = [
     "https://master.dj49as9kq0ier.amplifyapp.com",
 ]
 
+CORS_ALLOWED_ORIGINS = [
+    "https://master.dj49as9kq0ier.amplifyapp.com",
+    "https://taskmanagements.com",
+    "https://www.taskmanagements.com",
+]
+
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_HEADERS = list(default_headers) + [
+    "authorization",
+    "content-type",
+]
+
 # Application definition
 INSTALLED_APPS = [
     "corsheaders",
@@ -54,7 +66,6 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    # CORS must come before CommonMiddleware
     "corsheaders.middleware.CorsMiddleware",
 
     "django.middleware.security.SecurityMiddleware",
@@ -131,9 +142,9 @@ USE_TZ = True
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
-# Default primary key field type
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+<<<<<<< HEAD
 # CORS configuration
 CORS_ALLOWED_ORIGINS = [
     "https://master.dj49as9kq0ier.amplifyapp.com",
@@ -148,4 +159,6 @@ CORS_ALLOW_HEADERS = list(default_headers) + [
 ]
 
 # Optional: turn off automatic slash-append
+=======
+>>>>>>> 8ddf25d (implemented logout function and added logout button in home page, update CORS/URL rewrites and Amplify config)
 APPEND_SLASH = False
