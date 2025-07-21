@@ -54,6 +54,10 @@ function Form({ route, method }) {
         <button className="form-button" type="submit">
             {name}
         </button>
+        <br />
+        <p className="register-text">
+            Don't have an account? <Link to="/register">Register</Link>
+        </p>
     </form>
 }
 
