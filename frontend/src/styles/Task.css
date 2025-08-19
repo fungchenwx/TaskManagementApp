@@ -1,48 +1,42 @@
-.task-container {
-  padding: 10px;
-  margin: 20px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+.task {
+  background-color: #f9f9f9;
+  border-left: 5px solid #007bff;
+  margin: 10px 0;
+  padding: 12px 16px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: box-shadow 0.2s ease-in-out;
 }
 
-.task-title {
+.task:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.task h3 {
+  margin: 0;
+  font-size: 1rem;
   color: #333;
 }
 
-.task-content {
+.task p {
+  margin: 4px 0 0;
+  font-size: 0.875rem;
   color: #666;
 }
 
-.task-date {
-  color: #999;
-  font-size: 0.8rem;
-}
-
 .delete-button {
-  background-color: #f44336; /* Red */
+  background-color: #dc3545;
   color: white;
   border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 6px 12px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.2s ease-in-out;
+  font-size: 14px;
 }
 
 .delete-button:hover {
-  background-color: #d32f2f; /* Darker red */
+  background-color: #b02a37;
 }
-
-.status-indicator {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  display: inline-block;
-  margin-right: 8px;
-  cursor: pointer;
-  vertical-align: middle;
-  border: 1px solid #ccc;
-}
-
-.status-green   { background-color: #2ecc71; }
-.status-orange  { background-color: #f39c12; }
-.status-red     { background-color: #e74c3c; }

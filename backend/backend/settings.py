@@ -22,6 +22,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "django-insecure-zbig23vtm9f&$s5y=hsf8&ldoaic=8299hq47ee+7tphk#17c=")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+
+# Set DEBUG to False in production
 DEBUG = False
 
 ALLOWED_HOSTS = [
@@ -139,7 +142,6 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-<<<<<<< HEAD
 # CORS configuration
 CORS_ALLOWED_ORIGINS = [
     "https://master.dj49as9kq0ier.amplifyapp.com",
@@ -147,6 +149,7 @@ CORS_ALLOWED_ORIGINS = [
     "https://www.taskmanagements.com",
     "https://api.taskmanagements.com",
 ]
+
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_HEADERS = list(default_headers) + [
     "authorization",
@@ -154,6 +157,4 @@ CORS_ALLOW_HEADERS = list(default_headers) + [
 ]
 
 # Optional: turn off automatic slash-append
-=======
->>>>>>> 8ddf25d (implemented logout function and added logout button in home page, update CORS/URL rewrites and Amplify config)
 APPEND_SLASH = False
