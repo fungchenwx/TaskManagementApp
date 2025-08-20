@@ -22,15 +22,15 @@ function Task({ task, onDelete, onStatusChange }) {
     const formattedDate = new Date(task.created_at).toLocaleDateString("en-US")
 
     return (
-        <div className="task-container">
+        <div className="task">
             <div>
                 <span
                     className={`status-indicator status-${STATUSES[statusIndex]}`}
                     onClick={handleStatusClick}
                     title={`Current status: ${STATUSES[statusIndex]}`}
                 />
-            </div> 
-            <div className="task-container">
+            </div>
+            <div>
                 <p className="task-title">{task.title}</p>
                 <p className="task-content">{task.content}</p>
                 <p className="task-date">{formattedDate}</p>
