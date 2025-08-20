@@ -34,12 +34,13 @@ ALLOWED_HOSTS = [
     "taskmanagements.com",
     "www.taskmanagements.com",
     "api.taskmanagements.com",
+    "master.d39m7a020w4ahy.amplifyapp.com",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     "https://taskmanagements.com",
     "https://www.taskmanagements.com",
-    "https://master.dj49as9kq0ier.amplifyapp.com",
+    "https://master.d39m7a020w4ahy.amplifyapp.com",
     "https://api.taskmanagements.com",
 ]
 
@@ -144,7 +145,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # CORS configuration
 CORS_ALLOWED_ORIGINS = [
-    "https://master.dj49as9kq0ier.amplifyapp.com",
+    "https://master.d39m7a020w4ahy.amplifyapp.com",
     "https://taskmanagements.com",
     "https://www.taskmanagements.com",
     "https://api.taskmanagements.com",
