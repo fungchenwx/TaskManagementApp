@@ -45,9 +45,17 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 CORS_ALLOW_CREDENTIALS = True
+
 CORS_ALLOW_HEADERS = list(default_headers) + [
     "authorization",
     "content-type",
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "https://master.d39m7a020w4ahy.amplifyapp.com",
+    "https://taskmanagements.com",
+    "https://www.taskmanagements.com",
+    "https://api.taskmanagements.com",
 ]
 
 # Application definition
@@ -59,7 +67,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-
     "rest_framework",
     "api",
 ]
@@ -142,20 +149,6 @@ STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-# CORS configuration
-CORS_ALLOWED_ORIGINS = [
-    "https://master.d39m7a020w4ahy.amplifyapp.com",
-    "https://taskmanagements.com",
-    "https://www.taskmanagements.com",
-    "https://api.taskmanagements.com",
-]
-
-CORS_ALLOW_CREDENTIALS = True
-CORS_ALLOW_HEADERS = list(default_headers) + [
-    "authorization",
-    "content-type",
-]
 
 # Optional: turn off automatic slash-append
 APPEND_SLASH = False

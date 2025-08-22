@@ -24,13 +24,6 @@ function Task({ task, onDelete, onStatusChange }) {
     return (
         <div className="task">
             <div>
-                <span
-                    className={`status-indicator status-${STATUSES[statusIndex]}`}
-                    onClick={handleStatusClick}
-                    title={`Current status: ${STATUSES[statusIndex]}`}
-                />
-            </div>
-            <div>
                 <p className="task-title">{task.title}</p>
                 <p className="task-content">{task.content}</p>
                 <p className="task-date">{formattedDate}</p>
