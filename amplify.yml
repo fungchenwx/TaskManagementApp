@@ -4,9 +4,12 @@ frontend:
     preBuild:
       commands:
         - cd frontend
+        - nvm install 20
+        - nvm use 20
         - npm ci
     build:
       commands:
+        - cd frontend
         - echo "VITE_API_URL=$VITE_API_URL" > .env
         - npm run build
   artifacts:
@@ -16,4 +19,3 @@ frontend:
   cache:
     paths:
       - frontend/node_modules/**/*
-
