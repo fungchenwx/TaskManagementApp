@@ -6,14 +6,18 @@ function TaskForm({ onSubmit }) {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [showSuccess, setShowSuccess] = useState(false);
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (isSubmitting) return;
         setIsSubmitting(true);
+        setShowSuccess(false);
         try {
             await onSubmit({ title, content });
             setTitle("");
             setContent("");
+            setShowSuccess(true);
         } catch (err) {
             console.error("Error creating task:", err);
         } finally {

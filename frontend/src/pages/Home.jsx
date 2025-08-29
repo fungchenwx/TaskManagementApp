@@ -63,6 +63,20 @@ function Home() {
         }
     };
 
+    const updateTaskStatus = async (id, newStatus) => {
+        try {
+            const res = await api.patch(`/api/tasks/update/${id}/`, { status: newStatus });
+            if (res.status === 200) {
+                await getTasks();
+            } else {
+                alert("Failed to update status");
+            }
+        } catch (err) {
+            console.error("Error updating status:", err);
+            alert(err);
+        }
+    };
+
     return (
         <div className="home-container">
             <div className="home-header">
@@ -80,6 +94,7 @@ function Home() {
                         key={task.id}
                         task={task}
                         onDelete={deleteTask}
+                        onStatusChange={updateTaskStatus}
                     />
                 ))}
                 </div>
