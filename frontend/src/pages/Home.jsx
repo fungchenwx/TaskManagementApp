@@ -65,7 +65,7 @@ function Home() {
 
     const updateTaskStatus = async (id, newStatus) => {
         try {
-            const res = await api.patch(`/api/tasks/update/${id}/`, { status: newStatus });
+            const res = await api.patch(`/api/tasks/${id}/`, { status: newStatus });
             if (res.status === 200) {
                 await getTasks();
             } else {
