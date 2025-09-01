@@ -33,6 +33,9 @@ class TaskDelete(generics.DestroyAPIView):
 class TaskUpdate(generics.UpdateAPIView):
     serializer_class = TaskSerializer
     permission_classes = [IsAuthenticated]
+    class Meta:
+        model = Task
+        fields = ['status']
 
     def get_queryset(self):
         user = self.request.user
