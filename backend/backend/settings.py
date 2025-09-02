@@ -150,5 +150,4 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# Optional: turn off automatic slash-append
-APPEND_SLASH = False
+APPEND_SLASH = True
