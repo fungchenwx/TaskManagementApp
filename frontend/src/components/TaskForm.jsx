@@ -28,7 +28,7 @@ function TaskForm({ onSubmit }) {
 
     return (
         <form onSubmit={handleSubmit} className="taskform-form">
-            <h2>Create a Task</h2>
+            <div className="taskform-header">Create a Task</div>
             <input
                 type="text"
                 value={title}

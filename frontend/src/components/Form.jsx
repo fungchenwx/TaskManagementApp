@@ -57,7 +57,11 @@ function Form({ route, method }) {
         </button>
         <br />
         <p className="register-text">
-            Don't have an account? <Link to="/register">Register</Link>
+            {method === "login" ? (
+                <>Don't have an account? <Link to="/register">Register</Link></>
+            ) : (
+                <>Already have an account? <Link to="/login">Login</Link></>
+            )}
         </p>
     </form>
 }

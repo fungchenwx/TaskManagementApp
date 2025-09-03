@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import Task from "../components/Task"
 import TaskForm from "../components/TaskForm"
+import TaskCount from "../components/TaskCount"
 import api from "../api"
 import "../styles/Home.css"
 import "../styles/Task.css"
@@ -79,24 +80,27 @@ function Home() {
 
     return (
         <div className="home-container">
+            <div className="header-bar">Task Managements App</div>
             <div className="home-header">
-                <h1>My Tasks</h1>
-                <button className="logout-button" onClick={handleLogout}>
-                Logout
-                </button>
+                <div className="home-header-top">
+                    <h1>TaskManagements</h1>
+                    <button className="logout-button" onClick={handleLogout}>
+                        Logout
+                    </button>
+                </div>
+                 < TaskCount tasks={tasks} />
             </div>
             <div className="task-container">
                 <div className="tasks-section">
-                <h2>Tasks</h2>
-                {tasks.length === 0 && <p className="no-tasks">No tasks yet.</p>}
-                {tasks.map((task) => (
-                    <Task
-                        key={task.id}
-                        task={task}
-                        onDelete={deleteTask}
-                        onStatusChange={updateTaskStatus}
-                    />
-                ))}
+                    {tasks.length === 0 && <p className="no-tasks">No tasks yet.</p>}
+                    {tasks.map((task) => (
+                        <Task
+                            key={task.id}
+                            task={task}
+                            onDelete={deleteTask}
+                            onStatusChange={updateTaskStatus}
+                        />
+                    ))}
                 </div>
                 <div className="taskform-container">
                     <TaskForm onSubmit={handleCreateTask} />

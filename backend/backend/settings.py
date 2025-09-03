@@ -20,9 +20,7 @@ load_dotenv()
 # BASE_DIR
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# SECURITY
-SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "django-insecure-zbig23vtm9f&$s5y=hsf8&ldoaic=8299hq47ee+7tphk#17c=")
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "dev-secret-key")
 
 # Set DEBUG to False in production
 DEBUG = False
@@ -52,6 +50,7 @@ CORS_ALLOW_HEADERS = list(default_headers) + [
 ]
 
 CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
     "https://master.d39m7a020w4ahy.amplifyapp.com",
     "https://taskmanagements.com",
     "https://www.taskmanagements.com",
