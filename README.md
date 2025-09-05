@@ -4,7 +4,7 @@ A full-stack **Task Management Application** built with **React** (frontend) and
 
 ---
 
-## Showcase
+## 📸 Showcase
 
 ### Login Page
 <img width="1440" height="753" alt="Login Page" src="https://github.com/user-attachments/assets/c96e4319-f4c5-41a1-b8ab-898c3a3a87b0" />
@@ -17,7 +17,7 @@ A full-stack **Task Management Application** built with **React** (frontend) and
 
 ---
 
-## Features
+## 🎯 Features
 
 - User **Registration & Login** with JWT authentication  
 - **Task CRUD operations** (Create, Read, Update, Delete)  
@@ -27,7 +27,7 @@ A full-stack **Task Management Application** built with **React** (frontend) and
 
 ---
 
-## Tech Stack
+## 🛠 Tech Stack
 
 - **Frontend:** React, Axios, React Router, CSS  
 - **Backend:** Django 5, Django REST Framework, Simple JWT  
@@ -36,8 +36,8 @@ A full-stack **Task Management Application** built with **React** (frontend) and
 
 ---
 
-## Project Structure
-
+## 🧩 Project Structure
+```
 TaskManagementApp/
 ├─ backend/
 │  ├─ api/
@@ -54,10 +54,10 @@ TaskManagementApp/
 │  │  └─ App.jsx
 │  └─ package.json
 └─ README.md
-
+```
 ---
 
-## API Endpoints
+## 📦 API Endpoints
 
 | Method | Endpoint                  | Description                | Auth |
 | ------ | ------------------------- | -------------------------- | ---- |
@@ -71,6 +71,6 @@ TaskManagementApp/
 
 --- 
 
-## License
+## 📄 License 
 
 This project is licensed under the MIT License.
