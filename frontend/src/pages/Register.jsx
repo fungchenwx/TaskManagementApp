@@ -1,4 +1,5 @@
-import Form from "../components/Form"
+import { useState, useEffect } from "react"
+import AuthPage from "../components/AuthPage"
 
 function Register() {
     return (
@@ -7,7 +8,7 @@ function Register() {
                 <h2>Task Managements <br></br> </h2>
                 <p>Transform your productivity with task managements</p>
             </div>
-            <Form route="/api/user/register/" method="register" />
+            <AuthPage/>
         </div>
     );
 }

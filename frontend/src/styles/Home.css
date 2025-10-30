@@ -60,6 +60,11 @@
   background-color: #b02a37;
 }
 
+.task-container {
+  display: flex;
+  margin-top: 20px;
+}
+
 .tasks-section {
   margin-bottom: 2rem;
 }
@@ -68,6 +73,9 @@
   color: #333;
   font-size: 24px;
   margin-bottom: 15px;
+  border-bottom: 2px solid #6a11cb;
+  padding-bottom: 8px;
+  margin-left: 20px;
 }
 
 .no-tasks {
