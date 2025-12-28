@@ -8,6 +8,7 @@ import "../styles/Task.css"
 import "../styles/Form.css"
 import { useNavigate } from "react-router-dom"
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants"
+import NavBar from "../components/NavBar"
 
 
 function Home() {
@@ -80,15 +81,14 @@ function Home() {
 
     return (
         <div className="home-container">
-            <div className="header-bar">Task Managements App</div>
+            <NavBar/>
             <div className="home-header">
                 <div className="home-header-top">
-                    <h1>TaskManagements</h1>
                     <button className="logout-button" onClick={handleLogout}>
                         Logout
                     </button>
                 </div>
-                 < TaskCount tasks={tasks} />
+                < TaskCount tasks={tasks} />
             </div>
             <div className="task-container">
                 <div className="tasks-section">

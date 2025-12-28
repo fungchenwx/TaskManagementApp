@@ -10,7 +10,6 @@
 }
 
 .home-container {
-  font-family: Arial, sans-serif;
   background-color: #f2f3f7;
   min-height: 100vh;
 }
@@ -63,6 +62,8 @@
 .task-container {
   display: flex;
   margin-top: 20px;
+  flex: 1;
+  margin-right: auto;
 }
 
 .tasks-section {
